@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Sunflower:300')
+$colorBlue: #4A90E2
+$colorGrey: #F2F2F2
+$colorMidGrey: #C8C8C8
+$colorIconGrey: #757575
+$colorBackground: #E1E1E1
+$colorRed: #D0021B
+$colorStar: #F5A623
+$colorStarItem: #FFF2DC
+$colorWhite: #FFF
+
+@mixin trans
+  transition: 0.5s
+
+*
+  padding: 0
+  margin: 0
+  style-decoration: none
+
+html, body 
+  font-family: 'Sunflower', sans-serif
+  background-color: $colorBackground
+
+.list
+  margin: 0 auto
+  align-items: center
+  width: 620px
+
+  .list-item
+    margin-bottom: 8px
+    background-color: $colorGrey
+    &.isStar
+      background: $colorStarItem
+    .top-content
+      padding-left: 32px
+      padding-right: 32px
+      .first
+        padding-top: 24px
+        padding-bottom: 16px
+        .el-checkbox
+          zoom: 1.7
+        .title
+          background-color: transparent
+          border: none
+          outline: none
+          padding-left: 16px
+          font-size: 24px
+        .first-icons
+          float: right
+          i
+            font-size: 24px
+            margin-right: 8px
+            cursor: pointer
+            +trans
+            &:last-child
+              margin-right: 0px
+            &.open
+              color: $colorBlue
+            &.star
+              color: $colorStar
+
+      .second
+        padding-left: 40px
+        padding-bottom: 17px
+        *
+          font-size: 16px
+          color: $colorIconGrey
+          margin-right: 16px
+    .bottom-content
+      border-top: 2px solid $colorMidGrey
+      .control
+        padding-left: 95px
+        padding-right: 32px
+        h3 
+          margin-bottom: 11px
+          > i
+            font-size: 20px
+            margin-left: -24px
+            padding-top: 24px
+        span
+          padding-left: 9px
+        .fa-plus-square
+          cursor: pointer
+          font-size: 32px
+      .btns
+        margin-top: 24px
+        font-size: 24px
+        .btn
+          display: inline-block
+          text-align: center
+          width: 310px
+          padding-top: 16px
+          padding-bottom: 16px
+          cursor: pointer
+          +trans
+          i
+            padding-right: 16px
+          &.cancel
+            background-color: $colorWhite
+            color: $colorRed
+            &:hover
+              background: lighten($colorRed, 40%)
+          &.add
+            background-color: $colorBlue
+            color: $colorWhite
+            &:hover
+              background-color: darken($colorBlue, 10%)
+        
